@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>HTA</title>
+     <HTA:APPLICATION 
+         APPLICATIONNAME="YourAppName" 
+         BORDER="thin" 
+         CAPTION="yes" 
+         SHOWINTASKBAR="yes" 
+         SINGLEINSTANCE="yes" 
+         ICON="favicon.ico" 
+         WINDOWSTATE="normal" />
+         <style>
+          body{
+               margin:0;
+          }
+
+          .nav{
+               position: sticky;
+               top:0;
+               display: flex;
+               justify-content: center;
+               align-items: center;
+               gap: 15px;
+               width: 100%;
+               height:120px;
+               background-color: deepskyblue;
+          }
+
+          .nav a{
+               color: white;
+               text-decoration: none;
+               border-radius: 5px;
+               border: none;
+               outline:none;
+               padding: 3px 3px;
+               font-size: 1.5rem;
+               text-decoration: none;
+               text-decoration-color: white;
+               text-decoration-thickness: 3px;
+               font-weight:600;
+               transition: color 1.2s, background-color 1.2s, text-decoration 1.2s;
+               font-family: 'Inter', Arial, sans-serif
+          }
+
+          .nav a:hover{
+               background-color: hsl(195, 100%, 45%);
+               border-radius: 5px;
+               border: none;
+               outline:none;
+               text-decoration: underline;
+               text-decoration-style: solid;
+               text-decoration-color: #eeee;
+               text-decoration-thickness: 3px;
+               color: #eeee;
+          }
+
+          .nav a:active{
+               transform: scale(0.9);
+          }
+
+          .nav a:focus-within{
+               background-color: hsl(195, 100%, 45%);
+               border-radius: 5px;
+               border: none;
+               outline:none;
+               text-decoration: underline;
+               text-decoration-style: solid;
+               text-decoration-color: #eeee;
+               text-decoration-thickness: 3px;
+               color: #eeee;
+          }
+         </style>
+</head>
+<body>
+     <div class="nav">
+          <a href="#unblock">
+               <ion-icon name="lock-open-outline"></ion-icon>
+               Unblock
+          </a>
+          <a href="#how">
+               <ion-icon name="information-circle-outline"></ion-icon>
+               Intructions
+          </a>
+          <a href="#downlaod">
+               <ion-icon name="download-outline"></ion-icon>
+               Download
+          </a>
+     </div>
+     <script>
+     function isChromebook() {
+          return /CrOS/.test(navigator.userAgent);
+     }
+
+     function checkDevMode() {
+     // Note: There is no reliable way to check if a Chromebook is in Developer Mode using JavaScript
+     // You might want to look for specific signs or use a heuristic if necessary.
+     // Here, we'll just simulate checking Developer Mode.
+    return false; // Change this based on actual checks, if any.
+     }
+
+     if (isChromebook()) {
+          if (checkDevMode()) {
+               alert("You are on a Chromebook in Developer Mode. Please proceed with caution!");
+          } else {
+               alert("You are on a Chromebook.");
+          }
+     } else {
+               alert("You are not using a Chromebook.");
+     }
+     
+     </script>
+     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
+
+  
